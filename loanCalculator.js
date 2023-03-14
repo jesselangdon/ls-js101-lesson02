@@ -1,10 +1,5 @@
-// greet the user
-// ask user for loan amount
-// ask user for monthly/annual percentage rate
-// ask user for loan duration (in months)
-// calculate the monthly interest rate
-// calculat loan duration in months
-// print results to the terminal
+// Loan calculator tool calculates the monthly payment based on loan amount,
+// loan duration, and APR.
 
 // import libraries
 const readline = require('readline-sync');
@@ -56,11 +51,6 @@ while (true) {
 	// get loan duration value from user
 	prompt(msg.questionLoanDuration);
 	let loanDuration = readline.question();
-
-	// while (invalidNumber(loanDuration)) {
-	// 	prompt(msg.invalidNumber);
-	// 	loanDurationNumber = readline.question();
-	// }
 
 	while (invalidDuration(loanDuration)) {
 		prompt(msg.invalidDuration);
