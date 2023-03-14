@@ -1,0 +1,9 @@
+{
+	"welcome": "Welcome to the Loan Calculator!\\nThis tool calculates your monthly loan.",
+	"questionLoanAmount" : "What is the total loan amount (in USD)?",
+	"questionInterestRate" : "What is the monthly interest rate (in %)?",
+	"questionLoanDuration" : "What is the duration of the loan (in years)?",
+	"invalidNumber" : "The number you entered was not valid. Please try again...",
+	"invalidDuration"  : "The loan duration must be no greater than 30 years. Please try again...",
+	"anotherCalc" : "Would you like to run the Loan Calculator again?"
+}
