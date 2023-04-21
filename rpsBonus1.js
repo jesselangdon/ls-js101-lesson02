@@ -8,12 +8,13 @@ function prompt(message) {
   console.log(`=> ${message}`);
 }
 
+// displays a greeting when the game begins
 function displayGreeting() {
   prompt('Welcome to rock, paper, scissors, spock, lizard!')
   prompt('Play against the computer to see who wins!')
   prompt('·'.repeat(40));
 }
-
+// function to determin if the user wins a round against the computer
 function userWins(userChoice, computerChoice) {
 	return (userChoice === 'rock' && computerChoice === 'scissors') ||
 	       (userChoice === 'rock' && computerChoice === 'lizard') ||
@@ -55,6 +56,7 @@ function returnUserChoice() {
   return returnUserChoiceFromInput(userInput);
 }
 
+
 // Main process
 displayGreeting()
 
@@ -68,7 +70,7 @@ while (true) {
 		choice = returnUserChoice();
 	}
 
-	// randomly choose from rock, paper, or scissors
+	// randomly choose from array of valid choices
 	let randomIndex = Math.floor(Math.random() * VALID_CHOICES.length);
 	let randomChoice = VALID_CHOICES[randomIndex];
 
