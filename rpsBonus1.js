@@ -1,4 +1,4 @@
-
+// Adding a variation on the Rock Paper Scissors game that adds two more options - Lizard and Spock
 
 const readline = require('readline-sync');
 const VALID_CHOICES = ['rock', 'paper', 'scissors', 'spock', 'lizard'];
