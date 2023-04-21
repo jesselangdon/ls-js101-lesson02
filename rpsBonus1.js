@@ -1,11 +1,11 @@
-// Adding a variation on the Rock Paper Scissors game that adds two more options - Lizard and Spock
+// Adding a variation on the Rock Paper Scissors game, adding Lizard and Spock
 
 const readline = require('readline-sync');
 const VALID_CHOICES = ['rock', 'paper', 'scissors', 'spock', 'lizard'];
 
-// use a nice prompt
+// function that accepts user input usnice prompt
 function prompt(message) {
-	console.log(`=> ${message}`);
+  console.log(`=> ${message}`);
 }
 
 // function to determine the winner
@@ -20,20 +20,11 @@ function displayWinner(userChoice, computerChoice) {
 				(userChoice === 'spock' && computerChoice === 'scissors') ||
 				(userChoice === 'lizard'  && computerChoice === 'spock') ||
 				(userChoice === 'lizard'  && computerChoice === 'paper')) {
-				 prompt('You win!');
-		} else if ((userChoice === 'rock' && computerChoice === 'paper') ||
-							 (userChoice === 'rock' && computerChoice === 'spock') ||
-							 (userChoice === 'paper' && computerChoice === 'scissors') ||
-							 (userChoice === 'paper' && computerChoice === 'lizard') ||
-							 (userChoice === 'scissors' && computerChoice === 'rock') ||
-							 (userChoice === 'scissors' && computerChoice === 'spock') ||
-							 (userChoice === 'spock' && computerChoice === 'lizard') ||
-							 (userChoice === 'spock' && computerChoice === 'paper') ||
-							 (userChoice === 'lizard' && computerChoice === 'scissors') ||
-							 (userChoice === 'lizard' && computerChoice === 'rock')) {
-								prompt('Computer wins!');
-		} else {
+			  prompt('You win!');
+		} else if (userChoice === computerChoice) {
 			prompt("It's a tie!");
+		} else {
+		  prompt("Computer wins!");
 		}
 }
 
@@ -52,7 +43,7 @@ while (true) {
 	let randomChoice = VALID_CHOICES[randomIndex];
 
 	prompt(`You chose ${choice}, the computer chose ${randomChoice}`);
-	displayWinner(choice, randomChoice)
+	displayWinner(choice, randomChoice);
 
 	prompt('Would you like to play again (y/n)?');
 	let answer = readline.question().toLowerCase();
