@@ -8,24 +8,28 @@ function prompt(message) {
   console.log(`=> ${message}`);
 }
 
+function userWins(userChoice, computerChoice) {
+	return (userChoice === 'rock' && computerChoice === 'scissors') ||
+	       (userChoice === 'rock' && computerChoice === 'lizard') ||
+         (userChoice === 'paper' && computerChoice === 'rock') ||
+         (userChoice === 'paper' && computerChoice === 'spock') ||
+         (userChoice === 'scissors' && computerChoice === 'paper') ||
+         (userChoice === 'scissors' && computerChoice === 'lizard') ||
+         (userChoice === 'spock' && computerChoice === 'rock') ||
+         (userChoice === 'spock' && computerChoice === 'scissors') ||
+         (userChoice === 'lizard'  && computerChoice === 'spock') ||
+         (userChoice === 'lizard'  && computerChoice === 'paper');
+}
+
 // function to determine the winner
 function displayWinner(userChoice, computerChoice) {
-		if ((userChoice === 'rock' && computerChoice === 'scissors') ||
-				(userChoice === 'rock' && computerChoice === 'lizard') ||
-				(userChoice === 'paper' && computerChoice === 'rock') ||
-				(userChoice === 'paper' && computerChoice === 'spock') ||
-				(userChoice === 'scissors' && computerChoice === 'paper') ||
-				(userChoice === 'scissors' && computerChoice === 'lizard') ||
-				(userChoice === 'spock' && computerChoice === 'rock') ||
-				(userChoice === 'spock' && computerChoice === 'scissors') ||
-				(userChoice === 'lizard'  && computerChoice === 'spock') ||
-				(userChoice === 'lizard'  && computerChoice === 'paper')) {
-			  prompt('You win!');
-		} else if (userChoice === computerChoice) {
-			prompt("It's a tie!");
-		} else {
-		  prompt("Computer wins!");
-		}
+  if (userWins(userChoice, computerChoice)) {
+    prompt("You win!");
+  } else if (userChoice === computerChoice) {
+		prompt("It's a tie!");
+	} else {
+		prompt("Computer wins!");
+	}
 }
 
 while (true) {
