@@ -8,6 +8,12 @@ function prompt(message) {
   console.log(`=> ${message}`);
 }
 
+function displayGreeting() {
+  prompt('Welcome to rock, paper, scissors, spock, lizard!')
+  prompt('Play against the computer to see who wins!')
+  prompt('·'.repeat(40));
+}
+
 function userWins(userChoice, computerChoice) {
 	return (userChoice === 'rock' && computerChoice === 'scissors') ||
 	       (userChoice === 'rock' && computerChoice === 'lizard') ||
@@ -49,6 +55,8 @@ function returnUserChoice() {
   return returnUserChoiceFromInput(userInput);
 }
 
+// Main process
+displayGreeting()
 
 while (true) {
 	// Ask the user to choose one of rock, paper, or scissors
@@ -74,5 +82,9 @@ while (true) {
 		answer = readline.question().toLowerCase();
 	}
 
-	if (answer[0] !== 'y') break;
+	if (answer[0] !== 'y') {
+	  console.clear();
+	  prompt('Thanks for playing!');
+	  break;
+	}
 }
