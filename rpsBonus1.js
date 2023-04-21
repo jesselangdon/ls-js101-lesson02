@@ -33,7 +33,7 @@ function displayWinner(userChoice, computerChoice) {
 }
 
 // function to return the full user choice string based on substring
-function returnUserChoiceFromSubstring(userString) {
+function returnUserChoiceFromInput(userString) {
 	for (let i = 0; i < VALID_CHOICES.length; i++) {
 		if (VALID_CHOICES[i].startsWith(userString)) {
 			return VALID_CHOICES[i];
@@ -43,15 +43,21 @@ function returnUserChoiceFromSubstring(userString) {
 	}
 }
 
+// function to receive and process user input
+function returnUserChoice() {
+  let userInput = readline.question();
+  return returnUserChoiceFromInput(userInput);
+}
+
 
 while (true) {
 	// Ask the user to choose one of rock, paper, or scissors
 	prompt(`Choose one: ${VALID_CHOICES.join(', ')}`);
-	let choice = readline.question();
+  let choice = returnUserChoice();
 
 	while (!VALID_CHOICES.includes(choice)) {
 		prompt("That's not a valid choice...");
-		choice = readline.question();
+		choice = returnUserChoice();
 	}
 
 	// randomly choose from rock, paper, or scissors
